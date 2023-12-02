@@ -8,3 +8,5 @@ part 2: convert written-as-word numbers to digit first -> add in some sed
 
 
 
+## Day 2:
+part 1: parse strings to find counts of red/green/blue, compare with given max --> c++ string 
