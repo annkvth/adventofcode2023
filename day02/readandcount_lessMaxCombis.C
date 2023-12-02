@@ -62,7 +62,7 @@ int parsecolors(std::string game){
     while (std::getline(sss, sSubpart, ',')) {
       std::istringstream partStream(sSubpart);
       while (partStream >> value >> color) {
-	std::cout << value << " " << color << std::endl;
+	//std::cout << value << " " << color << std::endl;
 	if (color == "red" && value > nRed) {
 	  nRed = value;
 	} else if (color == "green" && value > nGreen) {
