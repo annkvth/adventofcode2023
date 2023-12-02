@@ -35,7 +35,9 @@ sum=0;
 cat input |while read line;
 do;
   alldigits="";
-  numline=$(read_and_replace "$line")
+  #  numline=$(read_and_replace "$line")
+  # with letters in replace, the char-by-char reading isn't necessary anymore
+  numline=$(replace_nums "$line")
   echo $numline | grep -o -e "[0-9]" |   while read digit;
   do;
     alldigits="${alldigits}${digit}";
