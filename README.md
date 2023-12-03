@@ -13,3 +13,9 @@ part 1: parse strings to find counts of red/green/blue, compare with given max -
 
 part 2: reuse all the code of part 1, just return the product of colors instead of the gameID
 
+
+
+## Day 3:
+part 1: find position of numbers, check those for symbols in prev/current/next line --> python lists of chars
+
+
