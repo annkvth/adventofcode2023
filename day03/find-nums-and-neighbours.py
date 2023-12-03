@@ -1,4 +1,3 @@
-# draft - still to do:
 # pass previous and next line to the extract_numbers function, and check issymbol for the neighbours
 # where neighbours are from start-1 to end+1 
 # also remember to check issymbol for start-1 and end+1 in the line itself.
