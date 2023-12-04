@@ -19,3 +19,8 @@ part 2: reuse all the code of part 1, just return the product of colors instead 
 part 1: find position of numbers, check those for symbols in prev/current/next line --> python lists of chars
 
 
+
+## Day 4:
+part 1: parse strings to create lists of winning/drawn numbers, compare and score matches --> c++ string
+
+
