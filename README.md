@@ -23,4 +23,5 @@ part 1: find position of numbers, check those for symbols in prev/current/next l
 ## Day 4:
 part 1: parse strings to create lists of winning/drawn numbers, compare and score matches --> c++ string
 
+part 2: counts wins per card and multiply following cards --> c++ as before, with added map
 
