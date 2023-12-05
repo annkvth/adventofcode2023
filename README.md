@@ -25,3 +25,10 @@ part 1: parse strings to create lists of winning/drawn numbers, compare and scor
 
 part 2: counts wins per card and multiply following cards --> c++ as before, with added map
 
+
+## Day 5:
+part 1: follow seed number through different lookup "maps" to location number --> c++ std::vector<std::tuple<long,long,long>
+
+part 2: MILLIONS of seed numbers --> c++ as before, but brute-force reverse lookup to find a seed starting from min location
+
+
