@@ -18,6 +18,7 @@ part 2: reuse all the code of part 1, just return the product of colors instead 
 ## Day 3:
 part 1: find position of numbers, check those for symbols in prev/current/next line --> python lists of chars
 
+part 2: find star symbols, check for touching digits, convert those to full numbers and count (using set to keep numbers unique when more than one digit touches)
 
 
 ## Day 4:
