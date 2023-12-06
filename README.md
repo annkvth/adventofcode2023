@@ -32,3 +32,7 @@ part 1: follow seed number through different lookup "maps" to location number --
 part 2: MILLIONS of seed numbers --> c++ as before, but brute-force reverse lookup to find a seed starting from min location
 
 
+## Day 6:
+part 1: read races, use derived (pq-formula) equation to calculate win options --> c++ 
+
+part 2: as part 1, just squash the spaces --> just modify regex
