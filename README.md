@@ -37,3 +37,10 @@ part 2: MILLIONS of seed numbers --> c++ as before, but brute-force reverse look
 part 1: read races, use derived (pq-formula) equation to calculate win options --> c++ 
 
 part 2: as part 1, just squash the spaces --> just modify regex
+
+
+## Day 7:
+part 1: order cards by value, rate according to type of set, muliply --> c++ using tuple sort
+
+part 2: as part 1, but give J another worth and apply joker logic
+
