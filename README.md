@@ -44,3 +44,11 @@ part 1: order cards by value, rate according to type of set, muliply --> c++ usi
 
 part 2: as part 1, but give J another worth and apply joker logic
 
+
+
+
+## Day 11:
+part 1: find galaxy symbols after expanding input --> python, numpy arrays, re-insert rows to expand
+
+part 2: don't duplicate rows, instead use x to mark which should be expanded --> just add expansion when summing
+
