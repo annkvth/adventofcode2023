@@ -46,6 +46,13 @@ part 2: as part 1, but give J another worth and apply joker logic
 
 
 
+## Day 8
+part 1: follow map to left-or-right location in pair --> c++ map
+
+part 2: this was tough! needed a hint from reddit to finish (in hidsight it's obvious...) --> std::lcm
+
+
+
 
 ## Day 11:
 part 1: find galaxy symbols after expanding input --> python, numpy arrays, re-insert rows to expand

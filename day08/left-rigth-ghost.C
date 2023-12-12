@@ -1,6 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include <map>
+#include <numeric> // for least common multiple
 #include <regex>
 #include <sstream>
 #include <string>
@@ -8,6 +9,9 @@
 
 
 using namespace std;
+
+
+long recurse_lcm(long anum, vector<long> avec);
 
 
 int main(){
@@ -32,8 +36,9 @@ int main(){
   regex notalpha_re(R"([^A-Za-z\d])");
   pair<string,string> dir_set;
   string currLoc;
-  vector<string> allAloc;
+  vector<string> allLoc;
   int endsInA = 0; // count how many end in A - that's how many steps we take at the same time
+  int endsInZ = 0;
   while (getline(infile, line)){    
     if (!line.empty()){
       //example line: AAA = (BBB, CCC) -->AAA BBB CCC
@@ -43,27 +48,71 @@ int main(){
       getline(ss, sLocation);       istringstream partStream(sLocation);
       partStream >> currLoc >> dir_set.first >> dir_set.second;
       rl_map.insert(pair(currLoc, dir_set));
+      if(currLoc.back()=='A'){
+	endsInA++;
+	allLoc.push_back(currLoc);
+	cout << "A-end location " << currLoc << " " << rl_map[currLoc].first << " " << rl_map[currLoc].second << endl;     
+      }
+      else if(currLoc.back()=='Z'){
+	endsInZ++;
+	cout << "Z-end location " << currLoc << " " << rl_map[currLoc].first << " " << rl_map[currLoc].second << endl;     
+      }
       //      cout << currLoc << " " << rl_map[currLoc].first << " " << rl_map[currLoc].second << endl;     
     }
   }
-  
+  cout << endsInA << " locations end in A" << endl;  
+  cout << endsInZ << " locations end in Z" << endl;  
 
-  int sum=0;
-  currLoc = "AAA";
-  // now starting at AAA, loop over direction vector
-  // and check if this takes us to ZZZ  
-  while(!(currLoc=="ZZZ")){
-    for (auto nextLR : vecLR){
-      dir_set = rl_map[currLoc];
-      // new location based on left-right vector
-      nextLR=='L' ? currLoc = dir_set.first : currLoc = dir_set.second;
-      //      cout << nextLR << " of " << dir_set.first << "," << dir_set.second << " : " << currLoc << endl;
-      sum++;
-      if (currLoc=="ZZZ") break;
+  long sum=0;
+  // first solution didn't work, had to look up a spoiler-hint on reddit:
+  // "Hint: Ghosts travel in cycles. "
+  vector<long> nsteps;
+  bool check = false;
+  // for each start location, check how many steps the ghots needs to finish
+  for (auto currLoc : allLoc){
+    sum=0;
+    check=false;
+    while(!check){
+      for (auto nextLR : vecLR){
+	sum++;
+	// jump all the steps until Z-ending
+	dir_set = rl_map[currLoc];
+	// new location based on left-right vector
+	nextLR=='L' ? currLoc = dir_set.first : currLoc = dir_set.second;
+	// no need to keep counting when one wasn't z   
+	if(currLoc.back()=='Z'){
+	  nsteps.push_back(sum);
+	  std::cout << sum << std::endl;
+	  check=true;
+	  break;
+	}
+	// cout << nextLR << " of " << dir_set.first << "," << dir_set.second << " : "
+	//      << currLoc << " - " << currLoc.back() << endl;
+      }
     }
   }
-  
-  std::cout << sum << std::endl;
+
+  // seperate vector into last element and all the rest for function call
+  long anum= nsteps.back();
+  nsteps.pop_back();
+  long sresult = recurse_lcm(anum, nsteps);
+  std::cout << sresult << std::endl;
   
   return 0;
+}
+
+
+
+// avoid hard-coding vector legth - recurvice all off lcs
+long recurse_lcm(long anum, vector<long> avec){
+
+  long bnum = avec.back();
+  auto asize = avec.size();
+  avec.pop_back();
+  if (asize > 1){
+    bnum = recurse_lcm(bnum, avec);
+  }
+  
+  return lcm(anum, bnum);  
+  
 }
