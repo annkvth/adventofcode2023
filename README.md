@@ -1,3 +1,4 @@
+
 # adventofcode2023
 following along the adventofcode.com advent callender puzzles 2023
 
@@ -58,4 +59,11 @@ part 2: this was tough! needed a hint from reddit to finish (in hidsight it's ob
 part 1: find galaxy symbols after expanding input --> python, numpy arrays, re-insert rows to expand
 
 part 2: don't duplicate rows, instead use x to mark which should be expanded --> just add expansion when summing
+
+
+
+## Day 12:
+part 1: find all possible combinations that match spring-pattern --> C++, recursion for pattern expansion
+
+part 2: ... shoud have written part 1 spring-group-based instead of pattern based! need a new plan...
 
