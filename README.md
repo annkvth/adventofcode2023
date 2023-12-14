@@ -67,3 +67,7 @@ part 1: find all possible combinations that match spring-pattern --> C++, recurs
 
 part 2: ... shoud have written part 1 spring-group-based instead of pattern based! need a new plan...
 
+
+
+## Day 13:
+part 1: find mirror symmetries --> python 2D array. Fun with edge cases.
