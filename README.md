@@ -71,3 +71,6 @@ part 2: ... shoud have written part 1 spring-group-based instead of pattern base
 
 ## Day 13:
 part 1: find mirror symmetries --> python 2D array. Fun with edge cases.
+
+part 2: simple edit of part 1: look for exactly a single difference when matching.
+
