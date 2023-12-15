@@ -74,3 +74,15 @@ part 1: find mirror symmetries --> python 2D array. Fun with edge cases.
 
 part 2: simple edit of part 1: look for exactly a single difference when matching.
 
+
+## Day 14:
+part 1: shift rocks to the north and get load. c++, use sort to move rocks in substringn.
+
+part 2: shift rocks a gazillion times: find cycle in the patterns that appear, calculate from there.
+
+
+## Day 15:
+part 1: hashsum calculation. simply calculate hash based on char values.
+
+part 2: store sets of lenses (deque) in different boxes (map).
+
